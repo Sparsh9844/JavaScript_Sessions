@@ -1,0 +1,71 @@
+//Singleton
+//object.create
+
+//object literals
+
+const mySym = Symbol("key1")
+
+//A Symbol is a primitive value that is:
+
+// Always unique
+
+// Immutable
+
+// Not equal to any other Symbol, even if created with the same description
+
+//why we use symbol?
+//ans: Symbols are commonly used as object keys to prevent accidental overwriting of properties.
+
+//ex:const id = Symbol("id");
+
+// const user = {
+//   name: "Amit",
+//   [id]: 101
+// };
+
+// user.id = 202;   // does NOT overwrite Symbol key
+
+// console.log(user[id]); // 101
+
+//code continues
+
+const JsUser = {
+    name: "sparsh",
+    "full name": "Sparsh chauhan rajput",
+    [mySym]: "myKey1",
+    age: 18,
+    location: "Jaipur",
+    email: "sparsh@gmail.com",
+    isLoggedIn: false,
+    lastLoginDays: ["Monday", "Saturday"]
+}
+// JsUser.mySym = "myKey2"  not effect as it is a symbol
+
+// console.log(JsUser.email)
+// console.log(JsUser[email])
+// console.log(JsUser["full name"])
+// console.log(JsUser[mySym])
+// console.log(mySym)
+
+JsUser.email = "sparsh@gmail.com"
+// Object.freeze(JsUser)
+JsUser.email = "sparsh@microsoft.com"
+// console.log(JsUser);
+
+JsUser.greeting = function(){
+    console.log("Hello Js user")
+}
+
+JsUser.greetingTwo = function(){
+    console.log(`Hello Js user, ${this.name}`)
+}
+
+// console.log(JsUser.greeting());
+// console.log(JsUser.greetingTwo());
+
+//when we are doing console.log it is giving result with "undefined" because we are not returning any value
+// if we directly call method then it will not return undefined
+
+
+JsUser.greeting();
+JsUser.greetingTwo();
