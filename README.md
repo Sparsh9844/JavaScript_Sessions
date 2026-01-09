@@ -1,2 +1,2 @@
 # JavaScript_Sessions
-Getting better in JavaScript
+Getting better in JavaScript 
